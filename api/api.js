@@ -1,7 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
+var User = require('./models/User.js');
 var app = express();
+var jwt = require('./services/jwt.js');
+
 
 app.use(bodyParser.json());
 
@@ -13,10 +16,31 @@ app.use(function(req, res, next) {
 	next();
 });
 
+
 app.post('/register', function(req, res) {
-	console.log(req.body);
-	res.send('hi');
+	var user = req.body;
+
+	var newUser = new User.model({
+		email: user.email,
+		password: user.password
+	});
+
+	var payload = {
+		iss: req.hostname,
+		sub: user._id
+	};
+
+	var token = jwt.encode(payload, "shhhh....");
+
+	newUser.save(function(err) {
+		res.status(200).send({
+			user: newUser.toJSON(),
+			token: token
+		});
+	});
 });
+
+mongoose.connect('mongodb://localhost/psjwt');
 
 var server = app.listen(3000, function() {
 	console.log('api listening on ', server.address().port);

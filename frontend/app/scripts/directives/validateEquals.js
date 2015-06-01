@@ -24,6 +24,6 @@ angular.module('psJwtApp')
       		ngModelCtrl.$setViewValue(ngModelCtrl.$viewValue);
       	});
       }
-    }
+    };
   }
   );

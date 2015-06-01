@@ -25,5 +25,5 @@ angular.module('psJwtApp')
     		$rootScope.alert.show = false;
     	}, timeout || 2000);
 
-    }
+    };
 });
