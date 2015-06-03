@@ -9,11 +9,20 @@
   "author": "Joseph Youngquist",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.12.4",
-    "express": "^4.12.4",
-    "mongoose": "^4.0.4",
-    "bson": "^0.3.2",
     "bcrypt-nodejs": "0.0.3",
-    "crypto": "0.0.3"
+    "body-parser": "^1.12.4",
+    "bson": "^0.3.2",
+    "crypto": "0.0.3",
+    "express": "^4.12.4",
+    "jwt-simple": "^0.3.0",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.4",
+    "nodemailer": "^1.3.4",
+    "nodemailer-smtp-transport": "^1.0.3",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.57.0",
+    "underscore": "^1.8.3"
   }
 }

@@ -8,6 +8,8 @@
  * Controller of the psJwtApp
  */
 angular.module('psJwtApp')
-  .controller('headerCtrl', function ($scope, authToken) {
-    $scope.isAuthenticated = authToken.isAuthenticated;
+  .controller('headerCtrl', function ($scope, $auth) {
+    $scope.isAuthenticated = function() {
+    	return $auth.isAuthenticated;
+    }
   });
